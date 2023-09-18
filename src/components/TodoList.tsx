@@ -4,7 +4,7 @@ import {
     useDeleteTodoMutation,
     useGetTodosQuery,
     useUpdateTodoMutation,
-} from '../api/apiSlice';
+} from '../api/apiTodosSlice';
 
 const TodoList = () => {
     const {
@@ -35,7 +35,12 @@ const TodoList = () => {
                     />
                     <label htmlFor={todo.id}>{todo.title}</label>
                 </div>
-                <button onClick={() => deleteTodo(todo.id)} className='border p-1'>Delete</button>
+                <button
+                    onClick={() => deleteTodo(todo.id)}
+                    className='border p-1'
+                >
+                    Delete
+                </button>
                 <div>{todo.createdAt}</div>
             </article>
         );
